@@ -1,10 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 
-import TabNavigator from "./navigation/TabNavigator";
+import SwitchNavigator from "./navigation/SwitchNavigator";
 
 export default class App extends React.Component {
   render() {
-    return <TabNavigator />;
+    return (
+      <Provider store={store}>
+        <SwitchNavigator />
+      </Provider>
+    );
   }
 }
+``;
