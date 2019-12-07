@@ -6,14 +6,14 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 // importing screens to the tab navogator
-import Home from "../screens/Home";
+import { HomeNavigator } from "./StackNavigator";
 import Inbox from "../screens/Inbox";
 import Write from "../screens/Write";
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: Home,
+      screen: HomeNavigator,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <Ionicons

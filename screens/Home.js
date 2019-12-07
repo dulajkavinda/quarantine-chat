@@ -8,22 +8,13 @@ import { Icon } from "native-base";
 
 class Home extends React.Component {
   static navigationOptions = {
-    headerLeft: <Icon name="ios-camera-outline" style={{ paddingLeft: 10 }} />,
+    headerLeft: <Icon name="information-circle" style={{ paddingLeft: 10 }} />,
     title: "Instagram",
-    headerRight: <Icon style={{ paddingRight: 10 }} name="ios-send-outline" />
+    headerRight: <Icon style={{ paddingRight: 10 }} name="contact" />
   };
 
   render() {
-    return (
-      <View>
-        <View style={styles.header}>
-          <Image
-            source={require("../assets/logos/logo.png")}
-            style={styles.headerlogo}
-          />
-        </View>
-      </View>
-    );
+    return <View></View>;
   }
 }
 
