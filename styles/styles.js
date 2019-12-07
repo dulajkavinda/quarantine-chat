@@ -1,15 +1,14 @@
 import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
-let fb = width * 0.84;
-let phone = width * 0.8;
+let button = width * 0.84;
 
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "center"
   },
   button: {
     marginTop: 20,
@@ -28,25 +27,25 @@ export default styles = StyleSheet.create({
     borderBottomWidth: 1,
     textAlign: "center"
   },
-
-  fb: {
-    height: 70,
-    width: fb,
-    shadowColor: "#202020",
-    shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 5
+  logo: {
+    width: "50%",
+    height: "20%",
+    resizeMode: "stretch"
   },
-  phone: {
-    height: 70,
-    width: phone
-  },
-  auth: {
-    marginTop: 100,
+  header: {
+    width: 100 + "%",
+    height: 55,
+    top: 20,
+    resizeMode: "stretch",
+    backgroundColor: "rgb(249,250,251)",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '"rgb(233,233,233)"',
+    justifyContent: "center",
     alignItems: "center"
   },
-  logo: {
-    width: "40%",
-    height: "10%",
+  headerlogo: {
+    width: "15%",
+    height: "75%",
     resizeMode: "stretch"
   }
 });

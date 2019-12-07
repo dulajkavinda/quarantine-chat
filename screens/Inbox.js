@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
-import styles from "../styles";
+// importing styles
+import styles from "../styles/styles";
 
 class Inbox extends React.Component {
   render() {
