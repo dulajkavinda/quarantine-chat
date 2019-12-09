@@ -5,14 +5,18 @@ let button = width * 0.84;
 
 export default styles = StyleSheet.create({
   card: {
-    elevation: 15,
     width: 90 + "%",
     marginRight: "auto",
     marginLeft: "auto",
     marginTop: 100,
     borderTopLeftRadius: 30,
     borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30
+    borderBottomLeftRadius: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 7
   },
   cardItem: {
     height: 60,
@@ -30,7 +34,8 @@ export default styles = StyleSheet.create({
   },
   cardText: {
     margin: 18,
-    fontSize: 20
+    fontSize: 20,
+    textAlign: "center"
   },
   cardButton: {
     backgroundColor: "#485AA8",

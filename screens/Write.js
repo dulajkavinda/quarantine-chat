@@ -1,20 +1,9 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity, Image } from "react-native";
 
 // importing styles
 import styles from "../styles/writeStyles";
-import {
-  Container,
-  Header,
-  DeckSwiper,
-  Card,
-  CardItem,
-  Thumbnail,
-  Left,
-  Body,
-  Icon,
-  Right
-} from "native-base";
+import { Card, CardItem, Icon, Button } from "native-base";
 
 class Write extends React.Component {
   static navigationOptions = {
@@ -36,6 +25,31 @@ class Write extends React.Component {
         <Text style={styles.bottomText}>
           Tap the sticker to edit youe message
         </Text>
+        <View style={styles.buttonView}>
+          <Button rounded style={styles.buttonShare}>
+            <Text style={styles.cardButtonText}>SHARE</Text>
+          </Button>
+        </View>
+        <View style={styles.tabButton}>
+          <TouchableOpacity style={styles.tabIcons}>
+            <Image
+              style={styles.imagestyle}
+              source={require("../assets/dice.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabIcons}>
+            <Image
+              style={styles.imagestyle}
+              source={require("../assets/color.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabIcons}>
+            <Image
+              style={styles.imagestyle}
+              source={require("../assets/alp.png")}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
