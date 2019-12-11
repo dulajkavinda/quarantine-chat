@@ -5,17 +5,31 @@ import { Text, View, TouchableOpacity, Image } from "react-native";
 import styles from "../styles/writeStyles";
 import { Card, CardItem, Icon, Button } from "native-base";
 
+import { changeColor } from "../actions/write";
+
+import { bindActionCreators } from "redux";
+
+import { connect } from "react-redux";
+
 class Write extends React.Component {
   static navigationOptions = {
     headerLeft: <Icon name="information-circle" style={{ paddingLeft: 10 }} />,
     title: "Instagram",
     headerRight: <Icon style={{ paddingRight: 10 }} name="contact" />
   };
+
   render() {
     return (
       <View style={styles.container}>
         <Card style={styles.card}>
-          <CardItem style={styles.cardItemBody} cardBody>
+          <CardItem
+            style={{
+              backgroundColor: this.props.color.colorcode,
+              height: 180,
+              borderRadius: 19
+            }}
+            cardBody
+          >
             <Text style={styles.cardText}>
               Hey can you tell me what is the best place to go on a holidayfor 1
               week ? 😍😂☺️😊😘😘
@@ -37,7 +51,10 @@ class Write extends React.Component {
               source={require("../assets/dice.png")}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.tabIcons}>
+          <TouchableOpacity
+            style={styles.tabIcons}
+            onPress={() => this.props.changeColor()}
+          >
             <Image
               style={styles.imagestyle}
               source={require("../assets/color.png")}
@@ -55,4 +72,14 @@ class Write extends React.Component {
   }
 }
 
-export default Write;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ changeColor }, dispatch);
+};
+
+const mapStateToProps = state => {
+  return {
+    color: state.write
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Write);
