@@ -2,51 +2,42 @@ import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
 let button = width * 0.84;
-
 export default styles = StyleSheet.create({
-  card: {
-    width: 90 + "%",
-    marginRight: "auto",
-    marginLeft: "auto",
-    marginTop: 100,
-    borderTopLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 7
-  },
-  cardItem: {
-    height: 60,
-    borderTopLeftRadius: 500
-  },
-  thumbnail: {
-    marginLeft: -12
-  },
-  thumbIcon: {
-    paddingRight: 10
-  },
-  cardItemBody: {
-    backgroundColor: "#FDFF54",
-    height: 180
-  },
-  cardText: {
-    margin: 18,
-    fontSize: 20,
-    textAlign: "center"
-  },
-  cardButton: {
-    backgroundColor: "#485AA8",
-    height: 60,
+  topstats: {
+    backgroundColor: "#F2FAEF",
+    width: 118,
+    height: 100,
+    margin: "1%",
+    borderRadius: 10,
+    borderWidth: 0.5,
+    borderColor: "#d6d7da",
     justifyContent: "center",
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30
+    alignItems: "center"
   },
-  cardButtonText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "900"
+  topstatsC: {
+    flex: 1,
+    justifyContent: "center",
+    flexDirection: "row"
+  },
+  body: {
+    top: 115
+  },
+  bodystats: {
+    borderRadius: 10,
+    borderWidth: 1.5,
+    margin: "2%",
+    borderColor: "#d6d7da",
+    height: 52,
+    marginLeft: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  indicator: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    height: 80
   }
 });

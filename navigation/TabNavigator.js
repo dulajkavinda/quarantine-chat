@@ -9,19 +9,31 @@ import { Ionicons } from "@expo/vector-icons";
 import {
   HomeNavigator,
   WriteNavigator,
-  InboxNavigator
+  InboxNavigator,
+  MapNavigator,
+  ChatNavigator
 } from "./StackNavigator";
-import Inbox from "../screens/Inbox";
-import Write from "../screens/Write";
-
 const TabNavigator = createBottomTabNavigator(
   {
+    Write: {
+      screen: ChatNavigator,
+      navigationOptions: {
+        tabBarIcon: ({ focused }) => (
+          <Ionicons
+            name={focused ? "ios-chatbubbles" : "ios-chatboxes"}
+            size={32}
+            color="black"
+          />
+        ),
+        tabBarLabel: " "
+      }
+    },
     Home: {
       screen: HomeNavigator,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <Ionicons
-            name={focused ? "ios-home" : "ios-home"}
+            name={focused ? "md-person" : "md-person"}
             size={32}
             color="black"
           />
@@ -29,12 +41,12 @@ const TabNavigator = createBottomTabNavigator(
         tabBarLabel: " "
       }
     },
-    Write: {
-      screen: WriteNavigator,
+    Map: {
+      screen: MapNavigator,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <Ionicons
-            name={focused ? "md-open" : "md-open"}
+            name={focused ? "md-stats" : "md-stats"}
             size={32}
             color="black"
           />
@@ -42,12 +54,16 @@ const TabNavigator = createBottomTabNavigator(
         tabBarLabel: " "
       }
     },
-    Inbox: {
+    AboutUs: {
       screen: InboxNavigator,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <Ionicons
-            name={focused ? "ios-notifications" : "ios-notifications"}
+            name={
+              focused
+                ? "ios-information-circle-outline"
+                : "ios-information-circle"
+            }
             size={32}
             color="black"
           />

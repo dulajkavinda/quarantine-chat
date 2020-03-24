@@ -6,6 +6,9 @@ import { Text, View, Image } from "react-native";
 import HomeScreen from "../screens/Home";
 import WriteScreen from "../screens/Write";
 import InboxScreen from "../screens/Inbox";
+import MapScreen from "../screens/Map";
+import ChatScreen from "../screens/Chat";
+import MainScreen from "../screens/Main";
 
 export const HomeNavigator = createAppContainer(
   createStackNavigator({
@@ -15,7 +18,46 @@ export const HomeNavigator = createAppContainer(
         headerTitle: (
           <Image
             style={{
-              width: 75,
+              width: 90,
+              height: 40,
+              marginRight: "auto",
+              marginLeft: "auto"
+            }}
+            source={require("../assets/logos/logo.png")}
+          />
+        ),
+        title: "Home"
+      }
+    }
+  })
+);
+
+export const ChatNavigator = createAppContainer(
+  createStackNavigator({
+    Main: {
+      screen: MainScreen,
+      navigationOptions: {
+        headerTitle: (
+          <Image
+            style={{
+              width: 90,
+              height: 40,
+              marginRight: "auto",
+              marginLeft: "auto"
+            }}
+            source={require("../assets/logos/logo.png")}
+          />
+        ),
+        title: "Home"
+      }
+    },
+    Chat: {
+      screen: ChatScreen,
+      navigationOptions: {
+        headerTitle: (
+          <Image
+            style={{
+              width: 90,
               height: 40,
               marginRight: "auto",
               marginLeft: "auto"
@@ -37,7 +79,7 @@ export const WriteNavigator = createAppContainer(
         headerTitle: (
           <Image
             style={{
-              width: 75,
+              width: 90,
               height: 40,
               marginRight: "auto",
               marginLeft: "auto"
@@ -51,6 +93,28 @@ export const WriteNavigator = createAppContainer(
   })
 );
 
+export const MapNavigator = createAppContainer(
+  createStackNavigator({
+    Home: {
+      screen: MapScreen,
+      navigationOptions: {
+        headerTitle: (
+          <Image
+            style={{
+              width: 90,
+              height: 40,
+              marginRight: "auto",
+              marginLeft: "auto"
+            }}
+            source={require("../assets/logos/logo.png")}
+          />
+        ),
+        title: "Map"
+      }
+    }
+  })
+);
+
 export const InboxNavigator = createAppContainer(
   createStackNavigator({
     Home: {
@@ -59,7 +123,7 @@ export const InboxNavigator = createAppContainer(
         headerTitle: (
           <Image
             style={{
-              width: 75,
+              width: 90,
               height: 40,
               marginRight: "auto",
               marginLeft: "auto"
@@ -72,3 +136,21 @@ export const InboxNavigator = createAppContainer(
     }
   })
 );
+
+// This does the trick
+ChatNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible;
+  if (navigation.state.routes.length > 1) {
+    navigation.state.routes.map(route => {
+      if (route.routeName === "Chat") {
+        tabBarVisible = false;
+      } else {
+        tabBarVisible = true;
+      }
+    });
+  }
+
+  return {
+    tabBarVisible
+  };
+};

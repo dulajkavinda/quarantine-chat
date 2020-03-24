@@ -6,7 +6,7 @@ let button = width * 0.84;
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#d3d3d3",
     justifyContent: "center",
     alignItems: "center"
   },
