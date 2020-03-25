@@ -11,8 +11,6 @@ import { bindActionCreators } from "redux";
 
 import { connect } from "react-redux";
 
-import sl from "./sl.json";
-
 class Write extends React.Component {
   static navigationOptions = {
     headerLeft: <Icon name="information-circle" style={{ paddingLeft: 10 }} />,
